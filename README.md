@@ -6,6 +6,8 @@ This is a microservices-based **Interview Application** built using Java and Spr
 
 ## 📦 Microservices Structure
 
+```json
+
 📁 interview-app-microservices/
 │
 ├── userService/ → Manages users (candidates/interviewers)
@@ -14,10 +16,8 @@ This is a microservices-based **Interview Application** built using Java and Spr
 ├── aiService/ → AI-based suggestions/evaluations (e.g., GPT-based)
 ├── eureka/ → Eureka service registry (discovery server)
 
-yaml
-Copy code
-
----
+```
+--
 
 ## 🚀 Tech Stack
 
