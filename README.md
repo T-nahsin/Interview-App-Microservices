@@ -1,12 +1,14 @@
 # Interview App - Microservices Architecture
 
+```json
+
 This is a microservices-based **Interview Application** built using Java and Spring Boot. It enables functionalities such as user management, question and answer handling, and AI-powered features. The services communicate via REST and are registered/discovered through a Eureka server.
 
 ---
 
 ## 📦 Microservices Structure
 
-```json
+```
 
 📁 interview-app-microservices/
 │
@@ -16,7 +18,8 @@ This is a microservices-based **Interview Application** built using Java and Spr
 ├── aiService/ → AI-based suggestions/evaluations (e.g., GPT-based)
 ├── eureka/ → Eureka service registry (discovery server)
 
-```
+```json
+
 --
 
 ## 🚀 Tech Stack
@@ -55,19 +58,29 @@ This is a microservices-based **Interview Application** built using Java and Spr
 
 ### 🔧 Clone the Repository
 
+
 git clone https://github.com/T-nahsin/Interview-App-Microservices.git
 cd Interview-App-Microservices
+
+```
+
 ▶️ Start Eureka Server
+
+```json
 bash
 Copy code
 cd eureka
+
 mvn spring-boot:run
+
+```
+
 Eureka will be available at: http://localhost:8761
 
 ▶️ Run Each Microservice
 In separate terminals:
 
-bash
+```json
 Copy code
 cd userService
 mvn spring-boot:run
@@ -80,24 +93,27 @@ mvn spring-boot:run
 
 cd aiService
 mvn spring-boot:run
+
+```
+
 Each service will register itself with Eureka.
 
-📡 API Endpoints (Sample)
+#  📡 API Endpoints (Sample)
 Here are a few sample endpoints per service:
 
-🧑‍💼 User Service
+# 🧑‍💼 User Service
 Method	Endpoint	Description
 POST	/users/register	Register a new user
 POST	/users/login	Login with credentials
 GET	/users/{id}	Get user details
 
-❓ Question Service
+# ❓ Question Service
 Method	Endpoint	Description
 POST	/questions	Add a new question
 GET	/questions/{id}	Fetch a question
 GET	/questions	List all questions
 
-📝 Answer Service
+# 📝 Answer Service
 Method	Endpoint	Description
 POST	/answers	Submit an answer
 GET	/answers/{id}	Get an answer
@@ -109,7 +125,7 @@ POST	/ai/suggest	Generate suggested answers/questions
 
 May integrate OpenAI or custom ML/NLP models
 
-📌 Future Improvements
+#📌 Future Improvements
 ✅ API Gateway (Spring Cloud Gateway)
 
 ✅ Centralized Config (Spring Cloud Config)
@@ -127,14 +143,15 @@ May integrate OpenAI or custom ML/NLP models
 🐳 Docker (optional)
 Coming soon...
 
-bash
+```json
 Copy code
 docker-compose up --build
-🤝 Contributing
+```
+# 🤝 Contributing
 Contributions are welcome! Please open an issue or submit a PR.
 
-📄 License
+# 📄 License
 This project is open-source and available under the MIT License.
 
-👤 Author
+# 👤 Author
 T-nahsin
