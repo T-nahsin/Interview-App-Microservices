@@ -26,12 +26,11 @@ This project is a microservices-based application that helps users practice inte
 Swagger is enabled: `/swagger-ui.html`
 
 ## ⚡ How to Run
-```json
+```
 mvn spring-boot:run
 (Run each service separately)
+
 ```
 
 ## 👨‍💻 Author
 Nishant Singh
-
-Copy code
