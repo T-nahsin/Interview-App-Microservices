@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: evaluation-service
+  data:
+    mongodb:
+      uri: mongodb+srv://user:user@cluster0.un0kaso.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: InterviewPrep
+      auto-index-creation: true
+
+
+server:
+  port: 8085
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
