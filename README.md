@@ -1,4 +1,4 @@
-# AI-Based Interview Preparation App 🎯
+# AI-Powered Interview Preparation App 🎯
 
 This project is a microservices-based application that helps users practice interviews with AI-generated questions and evaluations.  
 
@@ -29,7 +29,6 @@ Swagger is enabled: `/swagger-ui.html`
 ```
 mvn spring-boot:run
 (Run each service separately)
-
 ```
 
 ## 👨‍💻 Author
