@@ -1,0 +1,46 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user/**
+
+        - id: question-service
+          uri: lb://QUESTION-SERVICE
+          predicates:
+            - Path=/question/**
+
+        - id: answer-service
+          uri: lb://ANSWER-SERVICE
+          predicates:
+            - Path=/answer/**
+
+        - id: ai-service
+          uri: lb://AI-SERVICE
+          predicates:
+            - Path=/gemini/**
+
+        - id: evaluation-service
+          uri: lb://EVALUATION-SERVICE
+          predicates:
+            - Path=/evaluate/**
+
+        - id: mock-interview-service
+          uri: lb://MOCK-INTERVIEW-SERVICE
+          predicates:
+            - Path=/mock/**
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.web: DEBUG
