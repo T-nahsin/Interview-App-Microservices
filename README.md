@@ -1,4 +1,4 @@
-<!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -187,7 +187,7 @@ http://localhost:8080/swagger-ui/index.html
         <strong>Nishant Singh</strong><br/>
         Backend Developer — Spring Boot, Java, MongoDB, AI integrations<br/>
         LinkedIn: <a href="https://www.linkedin.com/in/nishant-singh-95a15b2a6/" style="color:var(--accent); text-decoration:none;">Linkedln</a><br/>
-        Email: <span style="color:var(--muted);">your-nishant16405@gmail.com</span>
+        Email: <span style="color:var(--muted);">nishant16405@gmail.com</span>
       </p>
     </section>
 
