@@ -3,32 +3,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AI Interview Preparation App — README</title>
-  <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#7dd3fc; --accent-2:#60a5fa;
-      --plate:#071025; --glass: rgba(255,255,255,0.03);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    html,body{height:100%; margin:0; background:linear-gradient(180deg,#07102a 0%, #041023 100%); color:#e6eef6;}
-    .container{max-width:900px; margin:36px auto; padding:28px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; box-shadow: 0 6px 30px rgba(2,6,23,0.7); border:1px solid rgba(255,255,255,0.03);}
-    header{display:flex; gap:18px; align-items:center; margin-bottom:18px;}
-    .logo{width:72px; height:72px; border-radius:10px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; font-weight:700; color:#04263b; font-size:26px;}
-    h1{margin:0; font-size:22px;}
-    p.lead{margin:6px 0 18px; color:var(--muted);}
-    section{margin:18px 0; padding:14px; background:var(--glass); border-radius:10px; border:1px solid rgba(255,255,255,0.02);}
-    h2{margin:0 0 8px; font-size:16px; color:#dff6ff;}
-    ul{margin:8px 0 0 20px; color:var(--muted);}
-    code, pre{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace; background:rgba(2,6,23,0.6); color:#e6f7ff; padding:6px 8px; border-radius:6px;}
-    pre{padding:12px; overflow:auto;}
-    .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
-    .badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;}
-    .badge{font-size:12px; padding:6px 10px; background:rgba(255,255,255,0.03); border-radius:999px; color:var(--muted); border:1px solid rgba(255,255,255,0.02);}
-    .endpoint{display:flex; gap:8px; align-items:center; margin:6px 0;}
-    .chip{background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:6px; color:var(--accent); font-weight:600; border:1px solid rgba(125,211,252,0.12);}
-    footer{margin-top:18px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between; align-items:center;}
-    .note{font-size:13px; color:#ffecd2; background:rgba(255,255,255,0.02); padding:8px; border-radius:8px; border:1px solid rgba(255,255,255,0.02);}
-  </style>
 </head>
 <body>
   <div class="container" role="main">
