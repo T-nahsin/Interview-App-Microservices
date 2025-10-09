@@ -1,183 +1,133 @@
-
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-</head>
-<body>
-  <div class="container" role="main">
-    <header>
-      <div class="logo">AI</div>
-      <div>
-        <h1>🤖 AI Interview Preparation App — Backend</h1>
-        <p class="lead">AI-driven backend that generates interview questions, accepts answers, evaluates them via Gemini AI, and orchestrates mock interviews.</p>
-        <div class="badges">
-          <span class="badge">Java 25</span>
-          <span class="badge">Spring Boot 3.5.6</span>
-          <span class="badge">MongoDB Atlas</span>
-          <span class="badge">Gemini AI API</span>
-          <span class="badge">Keycloak</span>
-          <span class="badge">Swagger</span>
-          <span class="badge">Maven</span>
-        </div>
-      </div>
+  <body style="font-family: Arial, Helvetica, sans-serif; background-color: #0b1220; color: #e6eef6; line-height: 1.6; padding: 30px;">
+    <header style="text-align: center; margin-bottom: 40px;">
+      <h1 style="color: #7dd3fc;">🤖 AI Interview Preparation App — Backend</h1>
+      <p style="color: #9aa4b2; font-size: 16px; margin: 0 auto; max-width: 800px;">
+        A microservice-based backend that helps users prepare for job interviews by generating AI-powered questions, evaluating answers, and providing smart feedback — powered by Gemini AI.
+      </p>
+      <p>
+        <b>Tech Stack:</b> Java 25, Spring Boot 3.5.6, Spring Cloud Gateway, Spring Cloud Config, MongoDB Atlas, Gemini AI API, Keycloak, Swagger, Maven
+      </p>
     </header>
 
-<section aria-labelledby="purpose">
-      <h2 id="purpose">🧠 Purpose</h2>
-      <p style="color:var(--muted); margin:8px 0 0;">
-        This project helps job-seekers practice for interviews by providing AI-generated questions and AI-driven evaluations with actionable recommendations. It targets users who lack high-quality, role-based practice resources.
+  <section style="margin-bottom: 30px;">
+      <h2 style="color: #60a5fa;">🧠 Purpose</h2>
+      <p style="color: #d1d5db;">
+        This project helps job seekers practice interviews effectively by using AI to generate custom role-based questions, evaluate their answers, and provide improvement suggestions. It serves as a personal AI Interview Coach.
       </p>
     </section>
 
-<section aria-labelledby="services">
-      <h2 id="services">🧩 Microservices Overview</h2>
-      <div class="grid" style="margin-top:6px;">
-        <div>
-          <strong>User Service</strong>
-          <p class="muted" style="color:var(--muted); margin:6px 0 0;">Registers, logs in, fetches and validates users. Integrates with Keycloak for RBAC.</p>
-        </div>
-        <div>
-          <strong>Question Service</strong>
-          <p class="muted" style="color:var(--muted); margin:6px 0 0;">Generates AI-backed questions, returns random questions, and fetches question sets for users.</p>
-        </div>
-
-  <div>
-          <strong>Answer Service</strong>
-          <p class="muted" style="color:var(--muted); margin:6px 0 0;">Accepts and stores user answers; provides endpoints to submit and retrieve answers.</p>
-        </div>
-        <div>
-          <strong>Evaluation Service</strong>
-          <p class="muted" style="color:var(--muted); margin:6px 0 0;">Triggers AI analysis to score answers and produce improvement suggestions.</p>
-        </div>
-
-  <div>
-          <strong>AI Service</strong>
-          <p class="muted" style="color:var(--muted); margin:6px 0 0;">Responsible for direct calls to Gemini AI for question generation, scoring, and recommendations.</p>
-        </div>
-        <div>
-          <strong>Mock Interview Service</strong>
-          <p class="muted" style="color:var(--muted); margin:6px 0 0;">Orchestrates interview flows — Easy (5 Qs), Medium (10 Qs), Hard (15 Qs) — coordinates Question, Answer, and Evaluation services.</p>
-        </div>
-      </div>
-    </section>
-
-<section aria-labelledby="features">
-      <h2 id="features">🧠 Key Features</h2>
+  <section style="margin-bottom: 30px;">
+      <h2 style="color: #60a5fa;">🧩 Microservices Overview</h2>
       <ul>
-        <li>🔐 Role-based authentication & authorization via <strong>Keycloak</strong></li>
-        <li>🤖 AI-generated questions (role-based & difficulty-based) using <strong>Gemini AI</strong></li>
-        <li>📝 Answer submission & persistent storage (Answer Service)</li>
-        <li>🧾 AI-powered evaluation with scores and improvement recommendations</li>
-        <li>🎯 Mock interview orchestration with difficulty modes (Easy / Medium / Hard)</li>
-        <li>🧱 Modular microservices architecture for independent scaling and deployment</li>
-        <li>📘 Swagger docs for every service; tested APIs via Postman</li>
-        <li>🚀 Planned: resume evaluation, voice answers, and analytics dashboard</li>
+        <li><b>Config Service:</b> Centralized configuration server (Spring Cloud Config) for managing all microservice configurations.</li>
+        <li><b>API Gateway (Port 8080):</b> The single entry point for all requests; routes traffic to respective microservices and handles security/auth forwarding.</li>
+        <li><b>User Service:</b> Handles registration, login, fetching, and validation of users (integrated with Keycloak).</li>
+        <li><b>Question Service:</b> Generates AI-driven questions based on job roles and difficulty levels.</li>
+        <li><b>Answer Service:</b> Accepts and stores user answers.</li>
+        <li><b>Evaluation Service:</b> Uses AI to evaluate answers, assign scores, and provide improvement recommendations.</li>
+        <li><b>AI Service:</b> Interacts with Gemini AI API to generate questions, evaluate answers, and return recommendations.</li>
+        <li><b>Mock Interview Service:</b> Manages mock interview sessions (Easy - 5 questions, Medium - 10, Hard - 15) by coordinating Question, Answer, and Evaluation services.</li>
       </ul>
     </section>
-
-    <section aria-labelledby="architecture">
-      <h2 id="architecture">🏗 Architecture & Flow</h2>
-      <pre><code>// Simplified call flow (user starts mock interview)
-User --> MockInterviewService
-  MockInterviewService -> QuestionService (generate questions via AIService)
-  User submits answers -> AnswerService (persist)
-  AnswerService -> EvaluationService -> AIService (score & recommendations)
-  MockInterviewService aggregates results and returns summary
-</code></pre>
-      <p style="color:var(--muted); margin-top:8px;">
-        Services communicate over REST. The AI Service is stateless and designed to be scaled horizontally if AI request volume increases.
+    <section style="margin-bottom: 30px;">
+      <h2 style="color: #60a5fa;">🏗 Architecture & Flow</h2>
+      <pre style="background-color: #071025; padding: 15px; border-radius: 8px; color: #d1fae5;">
+[Client]
+   ↓
+[API Gateway :8080]
+   ↓ routes
+[User Service] ←→ [Config Service]
+[Question Service] ←→ [AI Service]
+[Answer Service] ←→ [Evaluation Service] ←→ [AI Service]
+[Mock Interview Service] orchestrates across them
+      </pre>
+      <p style="color: #9aa4b2;">
+        • The <b>API Gateway</b> simplifies access and centralizes routing.<br>
+        • The <b>Config Service</b> provides dynamic configuration to all microservices.<br>
+        • Services communicate via REST, keeping the system modular and scalable.
       </p>
     </section>
-
-  <section aria-labelledby="api">
-      <h2 id="api">🔌 Example API Endpoints</h2>
-      <div class="endpoint"><span class="chip">POST</span><code>/api/auth/register</code></div>
-      <div class="endpoint"><span class="chip">POST</span><code>/api/auth/login</code></div>
-      <div class="endpoint"><span class="chip">GET</span><code>/api/questions/generate/{role}</code></div>
-      <div class="endpoint"><span class="chip">POST</span><code>/api/answers/submit</code></div>
-      <div class="endpoint"><span class="chip">POST</span><code>/api/evaluate/answer</code></div>
-      <div class="endpoint"><span class="chip">POST</span><code>/api/mock/start/{mode}</code></div>
-    </section>
-
-  <section aria-labelledby="setup">
-      <h2 id="setup">⚙️ Setup Instructions</h2>
-
-  <h3 style="margin:8px 0 6px;">Prerequisites</h3>
-    <ul>
+    <section style="margin-bottom: 30px;">
+      <h2 style="color: #60a5fa;">⚙️ Setup Instructions</h2>
+      <h3>Prerequisites</h3>
+      <ul>
         <li>Java 25</li>
         <li>Maven 3+</li>
-        <li>MongoDB Atlas account & connection string</li>
-        <li>Keycloak instance (local or hosted) with realm & client configured</li>
-        <li>Gemini AI API key (configured securely — do NOT commit to git)</li>
+        <li>MongoDB Atlas account</li>
+        <li>Keycloak (realm + client configured)</li>
+        <li>Gemini AI API key</li>
       </ul>
-
-  <h3 style="margin:8px 0 6px;">Run Locally</h3>
-  <pre><code>git clone https://github.com/T-nahsin/ai-interview-app.git
+      <h3>Steps to Run</h3>
+      <pre style="background-color: #071025; padding: 15px; border-radius: 8px; color: #d1fae5;">
+# 1️⃣ Clone the repository
+git clone https://github.com/T-nahsin/ai-interview-app.git
 cd ai-interview-app
-# configure application.properties / secret store for each service:
-# - spring.data.mongodb.uri
-# - keycloak.* (realm, client-id, client-secret, auth-server-url)
-# - gemini.api.key
-mvn -T 1C clean install
-# run service (example)
+
+# 2️⃣ Start the Config Service
+mvn -pl config-service spring-boot:run
+
+# 3️⃣ Start the API Gateway (Port 8080)
+mvn -pl api-gateway spring-boot:run
+
+# 4️⃣ Start all other microservices
+mvn -pl user-service spring-boot:run
+mvn -pl question-service spring-boot:run
+mvn -pl ai-service spring-boot:run
+mvn -pl answer-service spring-boot:run
+mvn -pl evaluation-service spring-boot:run
 mvn -pl mock-interview-service spring-boot:run
-# visit Swagger (per service)
-http://localhost:8080/swagger-ui/index.html
-</code></pre>
 
-<p style="color:var(--muted); margin-top:8px;">Tip: use Docker + docker-compose for local multi-service orchestration (recommended for testing inter-service calls).</p>
-    </section>
+# 5️⃣ Access through API Gateway
+http://localhost:8080/
 
-  <section aria-labelledby="testing">
-      <h2 id="testing">🧪 Testing & Validation</h2>
-      <ul>
-        <li>APIs tested via Postman collections (include collection in repo `/postman/`)</li>
-        <li>Unit tests: JUnit + Mockito where applicable</li>
-        <li>Integration tests: test inter-service flows locally or in CI</li>
-      </ul>
-    </section>
-
-  <section aria-labelledby="security">
-      <h2 id="security">🔐 Security</h2>
-      <p style="color:var(--muted); margin:6px 0 0;">
-        Authentication and authorization are delegated to Keycloak. Services validate incoming tokens and enforce RBAC for protected endpoints. API keys (Gemini) should be stored in environment variables or a secret manager — never in source control.
+# 6️⃣ Open Swagger UI
+http://localhost:8080/swagger-ui.html
+      </pre>
+      <p style="color: #9aa4b2;">
+        Each service automatically fetches its configuration from the Config Service at startup.
       </p>
     </section>
-
-  <section aria-labelledby="future">
-      <h2 id="future">🚧 Future Enhancements</h2>
+    <section style="margin-bottom: 30px;">
+      <h2 style="color: #60a5fa;">🧠 Features</h2>
       <ul>
-        <li>🎤 Voice-based answers (speech-to-text) and audio evaluation</li>
-        <li>📄 Resume parsing & automated resume evaluation</li>
-        <li>📊 Analytics dashboard for user performance and trends</li>
-        <li>⚡️ Async processing & queuing for heavy AI tasks (e.g., using Kafka or RabbitMQ)</li>
+        <li>🔐 Role-based authentication and authorization via Keycloak</li>
+        <li>🤖 AI-generated questions using Gemini AI</li>
+        <li>🧾 AI-based evaluation with feedback and score generation</li>
+        <li>🎯 Mock interviews with selectable difficulty levels</li>
+        <li>📘 Swagger documentation for all APIs</li>
+        <li>🚀 Scalable microservices architecture</li>
+        <li>🧱 Centralized config management and gateway routing</li>
+        <li>🛠 Tested APIs with Postman collections</li>
       </ul>
     </section>
-
-  <section aria-labelledby="author">
-      <h2 id="author">👨‍💻 Author</h2>
-      <p style="color:var(--muted); margin:6px 0 0;">
-        <strong>Nishant Singh</strong><br/>
-        Backend Developer — Spring Boot, Java, MongoDB, AI integrations<br/>
-        LinkedIn: <a href="https://www.linkedin.com/in/nishant-singh-95a15b2a6/" style="color:var(--accent); text-decoration:none;">Linkedln</a><br/>
-        Email: <span style="color:var(--muted);">nishant16405@gmail.com</span>
+    <section style="margin-bottom: 30px;">
+      <h2 style="color: #60a5fa;">🚧 Future Enhancements</h2>
+      <ul>
+        <li>🎤 Voice-based answer submission and AI speech evaluation</li>
+        <li>📄 Resume parsing and evaluation via AI</li>
+        <li>📊 User performance analytics dashboard</li>
+        <li>☁️ Docker Compose or Kubernetes deployment setup</li>
+      </ul>
+    </section>
+    <section style="margin-bottom: 30px;">
+      <h2 style="color: #60a5fa;">👨‍💻 Author</h2>
+      <p>
+        <b>Nishant Singh</b><br />
+        Backend Developer — Java | Spring Boot | MongoDB | AI Integration<br />
+        <a href="https://www.linkedin.com/in/nishant-singh-95a15b2a6/" target="_blank" style="color: #7dd3fc; text-decoration: none;">
+          LinkedIn: https://www.linkedin.com/in/nishant-singh-95a15b2a6/
+        </a><br />
+        📧 Email: <span style="color: #9aa4b2;">nishant16405@gmail.com</span>
       </p>
     </section>
-
-  <section aria-labelledby="license">
-      <h2 id="license">🏷 License</h2>
-      <p style="color:var(--muted); margin:6px 0 0;">This project is open-source and available under the <strong>MIT License</strong>. See <code>LICENSE</code> for details.</p>
+    <section style="margin-bottom: 30px;">
+      <h2 style="color: #60a5fa;">🏷 License</h2>
+      <p style="color: #9aa4b2;">This project is open-source and available under the <b>MIT License</b>.</p>
     </section>
-
-  <div style="margin-top:14px;" class="note">
-      <strong>Quick reviewer note:</strong> This HTML README mirrors the README.md content and is styled for presentation. Paste this into a file like <code>README.html</code> in your repo or use the markdown version for GitHub's README.md (HTML will also render inside GitHub pages).
-    </div>
-
-  <footer>
-      <div style="color:var(--muted);">Last updated: <strong>October 2025</strong></div>
-      <div style="color:var(--muted)">Project: AI Interview Preparation App</div>
+    <footer style="text-align: center; margin-top: 40px; color: #9aa4b2; font-size: 14px;">
+      <p>Last Updated: October 2025 | AI Interview Preparation App Backend</p>
     </footer>
-  </div>
-</body>
+  </body>
 </html>
