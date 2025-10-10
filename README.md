@@ -117,6 +117,7 @@ http://localhost:8080/swagger-ui.html
         <b>Nishant Singh</b><br />
         Backend Developer — Java | Spring Boot | MongoDB | AI Integration<br />
         <a href="https://www.linkedin.com/in/nishant-singh-95a15b2a6/" target="_blank" style="color: #7dd3fc; text-decoration: none;">
+        LinkedIn:
      </a><br />
         📧 Email: <span style="color: #9aa4b2;">nishant16405@gmail.com</span>
       </p>
