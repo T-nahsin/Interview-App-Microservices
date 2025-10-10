@@ -21,7 +21,7 @@
   <section style="margin-bottom: 30px;">
       <h2 style="color: #60a5fa;">🧩 Microservices Overview</h2>
       <ul>
-        <li><b>Config Service:</b> Centralized configuration server (Spring Cloud Config) for managing all microservice configurations.</li>
+    <li><b>Config Service:</b> Centralized configuration server (Spring Cloud Config) for managing all microservice configurations.</li>
         <li><b>API Gateway (Port 8080):</b> The single entry point for all requests; routes traffic to respective microservices and handles security/auth forwarding.</li>
         <li><b>User Service:</b> Handles registration, login, fetching, and validation of users (integrated with Keycloak).</li>
         <li><b>Question Service:</b> Generates AI-driven questions based on job roles and difficulty levels.</li>
@@ -43,7 +43,7 @@
 [Answer Service] ←→ [Evaluation Service] ←→ [AI Service]
 [Mock Interview Service] orchestrates across them
       </pre>
-      <p style="color: #9aa4b2;">
+<p style="color: #9aa4b2;">
         • The <b>API Gateway</b> simplifies access and centralizes routing.<br>
         • The <b>Config Service</b> provides dynamic configuration to all microservices.<br>
         • Services communicate via REST, keeping the system modular and scalable.
