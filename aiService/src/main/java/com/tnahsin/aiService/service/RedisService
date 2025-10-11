@@ -1,0 +1,71 @@
+package com.tnahsin.aiService.service;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Service;
+
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+@Service
+@Slf4j
+public class RedisService {
+
+    @Autowired
+    private RedisTemplate<String, String> redisTemplate;
+
+
+
+    private final ObjectMapper objectMapper;
+
+    public RedisService(RedisTemplate<String, String> redisTemplate, ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
+
+    public String get(String key) {
+        try {
+            return redisTemplate.opsForValue().get(key);
+        } catch (Exception e) {
+
+            return null;
+        }
+    }
+
+    public void set(String key, String res, Long ttl) {
+        try {
+            redisTemplate.opsForValue().set(key, res, ttl, TimeUnit.SECONDS);
+        } catch (Exception e) {
+            log.error("Exception ", e);
+        }
+    }
+
+    public void setList(String key, List<String> list) {
+        try {
+            if (key == null || key.trim().isEmpty()) {
+                log.info("Redis key cannot be null or empty");
+            }
+            String json = objectMapper.writeValueAsString(list);
+            redisTemplate.opsForValue().set(key, json);
+        } catch (JsonProcessingException e) {
+            log.error("Error serializing list to JSON", e);
+        }
+    }
+
+    public List<String> getList(String key) {
+        if (key == null || key.trim().isEmpty()) {
+            throw new IllegalArgumentException("Redis key cannot be null or empty");
+        }
+        String json = redisTemplate.opsForValue().get(key);
+        if (json == null) return null;
+        try {
+            return Arrays.asList(objectMapper.readValue(json, String[].class));
+        } catch (Exception e) {
+            throw new RuntimeException("Error deserializing JSON from Redis", e);
+        }
+    }
+}
