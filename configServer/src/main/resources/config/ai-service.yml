@@ -1,3 +1,10 @@
+spring:
+  data:
+    redis:
+      url: redis-cli url
+
+
+
 server:
   port: 8083
 
