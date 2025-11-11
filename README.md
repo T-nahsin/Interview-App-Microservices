@@ -6,7 +6,7 @@
       <p style="color: #9aa4b2; font-size: 16px; margin: 0 auto; max-width: 800px;">
         A microservice-based backend that helps users prepare for job interviews by generating AI-powered questions, evaluating answers, and providing smart feedback — powered by Gemini AI.
       </p>
-      <p>
+      <p></p>
         <b>Tech Stack:</b> Java 25, Spring Boot 3.5.6, Spring Cloud Gateway, Spring Cloud Config, MongoDB Atlas, Gemini AI API, Keycloak, Swagger, Maven
       </p>
     </header>
