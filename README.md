@@ -2,7 +2,7 @@
 <html lang="en">
   <body style="font-family: Arial, Helvetica, sans-serif; background-color: #0b1220; color: #e6eef6; line-height: 1.6; padding: 30px;">
 
-    <header style="text-align: center; margin-bottom: 40px;">
+  <header style="text-align: center; margin-bottom: 40px;">
       <h1 style="color: #7dd3fc;">🤖 AI Interview Preparation App — Backend</h1>
       <p style="color: #9aa4b2; font-size: 16px; margin: 0 auto; max-width: 800px;">
         A scalable microservice-based backend designed to help users prepare for interviews with <b>AI-generated questions</b>, <b>intelligent answer evaluation</b>, and now — a new <b>AI-powered Resume Evaluator</b> built using Gemini AI.
@@ -12,14 +12,14 @@
       </p>
     </header>
 
-    <section style="margin-bottom: 30px;">
+  <section style="margin-bottom: 30px;">
       <h2 style="color: #60a5fa;">🧠 Purpose</h2>
       <p style="color: #d1d5db;">
         The goal of this project is to create an intelligent interview preparation backend that can simulate real-world interviews, evaluate performance, and now — assess resumes to help candidates improve their profiles before the actual interview.
       </p>
     </section>
 
-    <section style="margin-bottom: 30px;">
+  <section style="margin-bottom: 30px;">
       <h2 style="color: #60a5fa;">🧩 Microservices Overview</h2>
       <ul>
         <li><b>Config Service:</b> Centralized configuration management using Spring Cloud Config.</li>
@@ -34,7 +34,7 @@
       </ul>
     </section>
 
-    <section style="margin-bottom: 30px;">
+  <section style="margin-bottom: 30px;">
       <h2 style="color: #60a5fa;">🏗 Architecture & Flow</h2>
       <pre style="background-color: #071025; padding: 15px; border-radius: 8px; color: #d1fae5;">
 [Client]
@@ -54,7 +54,7 @@
       </p>
     </section>
 
-    <section style="margin-bottom: 30px;">
+  <section style="margin-bottom: 30px;">
       <h2 style="color: #60a5fa;">⚙️ Setup Instructions</h2>
       <h3>🧾 Prerequisites</h3>
       <ul>
@@ -66,7 +66,7 @@
         <li>Redis Server (local or remote)</li>
       </ul>
 
-      <h3>🚀 Run Locally</h3>
+  <h3>🚀 Run Locally</h3>
       <pre style="background-color: #071025; padding: 15px; border-radius: 8px; color: #d1fae5;">
 # 1️⃣ Clone the repository
 git clone https://github.com/T-nahsin/ai-interview-app.git
