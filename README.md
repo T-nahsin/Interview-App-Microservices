@@ -89,7 +89,7 @@ mvn -pl mock-interview-service spring-boot:run
 mvn -pl resume-service spring-boot:run
 
 # 5️⃣ Access the system
-http://localhost:8081/
+http://localhost:8080/
 
 # 6️⃣ Open Swagger Docs
 http://localhost:8080/swagger-ui.html
