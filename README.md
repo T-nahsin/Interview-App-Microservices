@@ -69,7 +69,7 @@
   <h3>🚀 Run Locally</h3>
       <pre style="background-color: #071025; padding: 15px; border-radius: 8px; color: #d1fae5;">
         
- # 1️⃣ Clone the repository
+ # 1️⃣ Clone the repository 
 git clone https://github.com/T-nahsin/ai-interview-app.git
 cd ai-interview-app
 
@@ -89,7 +89,7 @@ mvn -pl mock-interview-service spring-boot:run
 mvn -pl resume-service spring-boot:run
 
 # 5️⃣ Access the system
-http://localhost:8080/
+http://localhost:8081/
 
 # 6️⃣ Open Swagger Docs
 http://localhost:8080/swagger-ui.html
