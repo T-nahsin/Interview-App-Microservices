@@ -1,6 +1,5 @@
 package com.tnahsin.resumeService.controller;
 
-
 import com.tnahsin.resumeService.service.ResumeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
